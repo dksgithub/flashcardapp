@@ -156,6 +156,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+!.env.example
 
 # Spyder project settings
 .spyderproject
@@ -216,3 +217,77 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+Thumbs.db
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+*.log
+
+# env files (can opt-in for committing if needed)
+.env*
+!.env.example
+
+# local auth/session artifacts
+tmp-cookies.txt
+*.cookies
+
+# local editor metadata
+.cursor/
+.vscode/
+.idea/
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# secrets & keys
+*.key
+*.crt
+*.p12
+*.pfx
+*.keystore
+id_rsa
+id_rsa.pub
+*credentials*.json
+*service-account*.json
+secrets.json
+*.env.local.json
+
+# database dumps/backups (may contain real user data or credentials)
+*.sql.gz
+*.dump
+*.pgdump
+*.bak
+
