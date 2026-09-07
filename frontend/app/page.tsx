@@ -21,7 +21,9 @@ export default async function HomePage() {
             Flashcard learning, simplified
           </p>
           <h1 className="text-5xl font-bold tracking-tight sm:text-6xl">FlashyCardy</h1>
-          <p className="mt-5 text-lg text-slate-300 sm:text-xl">Your personal flashcard platform</p>
+          <p className="mt-5 text-lg text-slate-300 sm:text-xl">
+            Your personal flashcard platform
+          </p>
         </div>
 
         <AuthForm />
