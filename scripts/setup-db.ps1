@@ -102,5 +102,5 @@ INSERT INTO cards (deck_id, front, back) VALUES
   ((SELECT id FROM (SELECT id FROM (SELECT id FROM history_deck) AS d) AS x LIMIT 1), 'Which year did the United Kingdom vote to leave the European Union?', '2016');
 "@
 
-& psql -h $host -p $port -U $username -d $databaseName -v ON_ERROR_STOP=1 -c $seedSql
+& psql -h $dbHost -p $dbPort -U $dbUser -d $databaseName -v ON_ERROR_STOP=1 -c $seedSql
 Write-Host "Database setup complete."

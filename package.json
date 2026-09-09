@@ -13,7 +13,9 @@
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
-    "db:setup": "node ./scripts/setup-db.mjs"
+    "db:setup": "node ./scripts/setup-db.mjs",
+    "db:seed": "tsx src/index.ts",
+    "db:init": "npm run db:setup && npm run db:seed"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

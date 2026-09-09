@@ -4,27 +4,30 @@ This project uses the PostgreSQL 17 instance already running on the laptop.
 
 ## Local Postgres 17 setup
 
-1. Make sure your local PostgreSQL 17 server is running.
+1. Make sure your local PostgreSQL 17 server is running and `.env` has your `POSTGRES_*` / `DATABASE_URL` values set (see `.env.example`).
 
-2. Create the database if it does not already exist:
+2. Run the complete setup in one command — creates the database if missing, applies `db/schema.sql` (extension, tables, triggers), and seeds the demo user/deck/card data:
+
+   ```bash
+   npm run db:init
+   ```
+
+   This runs `db:setup` (database + schema) followed by `db:seed` (demo data). You can also run each step on its own:
+
+   ```bash
+   npm run db:setup   # create database + apply schema.sql
+   npm run db:seed    # seed demo user, decks, and cards (src/index.ts)
+   ```
+
+   Equivalent manual steps, if you prefer raw psql:
 
    ```bash
    createdb -h localhost -U postgres flashycardy
-   ```
-
-3. Initialize the schema:
-
-   ```bash
    psql -h localhost -U postgres -d flashycardy -f db/schema.sql
-   ```
-
-4. Seed the demo user and flashcard data:
-
-   ```bash
    npx tsx src/index.ts
    ```
 
-5. Start the app:
+3. Start the app:
 
    ```bash
    npm run dev
